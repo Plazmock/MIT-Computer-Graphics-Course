@@ -3,14 +3,12 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-#include <fstream>
 #include "vecmath.h"
 using namespace std;
 
 // Globals
 int Global_Color = 0;
 int GCameraX = 0, GCameraY = 0, GCameraZ = 5;
-float gLightX = 1, gLightY = 1;
 
 // This is the list of points (3D vectors)
 vector<Vector3f> vecv;
@@ -71,26 +69,22 @@ void specialFunc( int key, int x, int y )
 	case GLUT_KEY_UP:
 		// add code to change light position
 		cout << "Unhandled key press: up arrow." << endl;
-		//GCameraZ++;
-		gLightY += 0.5;
+		GCameraZ++;
 		break;
 	case GLUT_KEY_DOWN:
 		// add code to change light position
 		cout << "Unhandled key press: down arrow." << endl;
-		//GCameraZ--;
-		gLightY -= 0.5;
+		GCameraZ--;
 		break;
 	case GLUT_KEY_LEFT:
 		// add code to change light position
 		cout << "Unhandled key press: left arrow." << endl;
-		//GCameraY--;
-		gLightX -= 0.5;
+		GCameraY--;
 		break;
 	case GLUT_KEY_RIGHT:
 		// add code to change light position
 		cout << "Unhandled key press: right arrow." << endl;
-		//GCameraY++;
-		gLightX += 0.5;
+		GCameraY++;
 		break;
 	}
 
@@ -139,7 +133,7 @@ void drawScene(void)
 	// Light color (RGBA)
 	GLfloat Lt0diff[] = {1.0,1.0,1.0,1.0};
 	// Light position
-	GLfloat Lt0pos[] = {gLightX, gLightY, 5.0f, 1.0f};
+	GLfloat Lt0pos[] = {1.0f, 1.0f, 5.0f, 1.0f};
 
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, Lt0diff);
 	glLightfv(GL_LIGHT0, GL_POSITION, Lt0pos);
