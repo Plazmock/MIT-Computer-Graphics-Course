@@ -8,7 +8,7 @@ using namespace std;
 
 // Globals
 int Global_Color = 0;
-int GCameraX = 0, GCameraY = 0, GCameraZ = 5;
+double GCameraX = 0, GCameraY = 0, GCameraZ = 5;
 
 // This is the list of points (3D vectors)
 vector<Vector3f> vecv;
@@ -47,10 +47,10 @@ void keyboardFunc( unsigned char key, int x, int y )
 		cout << "Unhandled key press " << key << "." << endl; 
 		break;
 	case 's':
-		GCameraX++;
+		GCameraZ++;
 		break;
 	case'd':
-		GCameraX--;
+		GCameraZ--;
 		break;
 	default:
 		cout << "Unhandled key press " << key << "." << endl;        
@@ -69,22 +69,22 @@ void specialFunc( int key, int x, int y )
 	case GLUT_KEY_UP:
 		// add code to change light position
 		cout << "Unhandled key press: up arrow." << endl;
-		GCameraZ++;
+		GCameraY++;
 		break;
 	case GLUT_KEY_DOWN:
 		// add code to change light position
 		cout << "Unhandled key press: down arrow." << endl;
-		GCameraZ--;
+		GCameraY--;
 		break;
 	case GLUT_KEY_LEFT:
 		// add code to change light position
 		cout << "Unhandled key press: left arrow." << endl;
-		GCameraY--;
+		GCameraX--;
 		break;
 	case GLUT_KEY_RIGHT:
 		// add code to change light position
 		cout << "Unhandled key press: right arrow." << endl;
-		GCameraY++;
+		GCameraX++;
 		break;
 	}
 
@@ -140,8 +140,17 @@ void drawScene(void)
 
 	// This GLUT method draws a teapot.  You should replace
 	// it with code which draws the object you loaded.
+	//glutSolidTeapot(1);
+	glBegin(GL_TRIANGLES);
+	for (auto faceInfo : vecf)
+	{
+		for (int i = 0, j = 2; i <= 6; i+=3, j+=3){
+			glVertex3d(vecv[faceInfo[i]-1][0], vecv[faceInfo[i] - 1][1], vecv[faceInfo[i] - 1][2]);
+			glNormal3d(vecn[faceInfo[j]-1][0], vecn[faceInfo[j]-1][1], vecn[faceInfo[j]-1][2]);
+		}
+	}
+	glEnd();
 	
-	glutSolidTeapot(1);
 	
 	// Dump the image to the screen.
 	glutSwapBuffers();
@@ -178,6 +187,43 @@ void reshapeFunc(int w, int h)
 void loadInput()
 {
 	// load the OBJ file here
+	//freopen("torus.obj", "r", stdin);
+	//freopen("sphere.obj", "r", stdin);
+	freopen("garg.obj", "r", stdin);
+	string str = "";
+	
+	while (getline(cin, str))
+	{
+		string token;
+		stringstream input(str);
+		input >> token;
+		if (token == "v")
+		{
+			float x, y, z;
+			input >> x >> y >> z;
+			vecv.push_back(Vector3f(x, y, z));
+		}
+		else if (token == "vn")
+		{
+			float x, y, z;
+			input >> x >> y >> z;
+			vecn.push_back(Vector3f(x, y, z));
+		}
+		else if (token == "f")
+		{
+			unsigned int a, b, c, d, e, f, g, h, i;
+			char ch;
+			input >> a >> ch >> b >> ch >> c;
+			input >> d >> ch >> e >> ch >> f;
+			input >> g >> ch >> h >> ch >> i;
+			vecf.push_back({ a,b,c,d,e,f,g,h,i });
+		}
+		else
+		{
+			continue;
+		}
+	}
+
 }
 
 // Main routine.

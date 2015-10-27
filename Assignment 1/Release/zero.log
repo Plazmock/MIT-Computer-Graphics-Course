@@ -1,13 +1,14 @@
-﻿Build started 22/10/2015 10:24:30 PM.
-     1>Project "E:\Game Programing\MIT Computer Graphics\Assignment 1\zero.vcxproj" on node 2 (Build target(s)).
+﻿Build started 24/10/2015 8:40:25 PM.
+     1>Project "D:\Game Proggraming\MIT-Computer-Graphics-Course\Assignment 1\zero.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         E:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         D:\Programs\Microsoft Visual Studio 15\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-     1>main.cpp(120): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
-     1>main.cpp(120): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-     1>main.cpp(99): warning C4101: 'i': unreferenced local variable
+     1>main.cpp(118): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
+     1>main.cpp(118): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+     1>main.cpp(192): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdio.h(240): note: see declaration of 'freopen'
        Link:
-         E:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Game Programing\MIT Computer Graphics\Assignment 1\Release\zero.exe" /INCREMENTAL /NOLOGO freeglut.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"E:\Game Programing\MIT Computer Graphics\Assignment 1\Release\zero.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Game Programing\MIT Computer Graphics\Assignment 1\Release\zero.lib" /MACHINE:X86 /SAFESEH Release\main.obj
+         D:\Programs\Microsoft Visual Studio 15\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Game Proggraming\MIT-Computer-Graphics-Course\Assignment 1\Release\zero.exe" /INCREMENTAL /NOLOGO freeglut.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Game Proggraming\MIT-Computer-Graphics-Course\Assignment 1\Release\zero.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Game Proggraming\MIT-Computer-Graphics-Course\Assignment 1\Release\zero.lib" /MACHINE:X86 /SAFESEH Release\main.obj
          Release\Matrix2f.obj
          Release\Matrix3f.obj
          Release\Matrix4f.obj
@@ -16,9 +17,9 @@
          Release\Vector3f.obj
          Release\Vector4f.obj
      1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification
-         zero.vcxproj -> E:\Game Programing\MIT Computer Graphics\Assignment 1\Release\zero.exe
-     1>Done Building Project "E:\Game Programing\MIT Computer Graphics\Assignment 1\zero.vcxproj" (Build target(s)).
+         zero.vcxproj -> D:\Game Proggraming\MIT-Computer-Graphics-Course\Assignment 1\Release\zero.exe
+     1>Done Building Project "D:\Game Proggraming\MIT-Computer-Graphics-Course\Assignment 1\zero.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.80
+Time Elapsed 00:00:02.30
