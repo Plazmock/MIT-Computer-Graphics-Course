@@ -1,0 +1,6 @@
+*.suo
+*.obj
+*.exe
+*.log
+*.tlog
+*.lastbuildstate
